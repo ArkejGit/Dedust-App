@@ -8,12 +8,19 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Calculators</h3>
 
-  <ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Chat" tabIcon="chat"></ion-tab>
-  <!-- <ion-tab [root]="tab2Root"></ion-tab> -->
-  <!-- <ion-tab [root]="tab3Root"></ion-tab> -->
-  </ion-tabs>
+  <div padding>
+  <ion-segment [(ngModel)]="calculator">
+    <ion-segment-button value="velocity">
+      Velocity
+    </ion-segment-button>
+    <ion-segment-button value="diameter">
+      Diameter
+    </ion-segment-button>
+    <ion-segment-button value="flow">
+      Flow
+    </ion-segment-button>
+  </ion-segment>
+</div>  
 
 </ion-content>
