@@ -1,3 +1,4 @@
+<!-- header -->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -7,9 +8,12 @@
   </ion-navbar>
 </ion-header>
 
+<!-- content -->
 <ion-content padding>
-
+  
   <div padding>
+
+  <!-- segment buttons -->
   <ion-segment [(ngModel)]="calculator">
     <ion-segment-button value="velocity">
       Velocity
@@ -21,6 +25,30 @@
       Flow
     </ion-segment-button>
   </ion-segment>
+
+  <!-- segment contents -->
+  <div [ngSwitch]="calculator">
+    <ion-list *ngSwitchCase="'velocity'">
+      <ion-item>
+        <ion-label color="primary" floating>diameter [mm]</ion-label>
+        <ion-input type="number" (change)="setDiameter($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>flow [m <sup>3</sup> /h]</ion-label>
+        <ion-input type="number" (change)="setFlow($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        {{result}}m/s
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'diameter'">
+      <ion-item>        
+        <h2>ARKEJ</h2>
+      </ion-item>
+    </ion-list>
+  </div>  
+
 </div>  
 
 </ion-content>
