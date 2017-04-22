@@ -5,6 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-calculators',
   templateUrl: 'calculators.html',
   //styleUrls: [ 'calculators.scss' ]
+  
 })
 export class CalculatorsPage {
 
