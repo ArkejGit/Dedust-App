@@ -14,7 +14,7 @@
   <div padding>
 
   <!-- segment buttons -->
-  <ion-segment [(ngModel)]="calculator">
+  <ion-segment [(ngModel)]="calculator" (click)="clearParameters()">
     <ion-segment-button value="velocity">
       Velocity
     </ion-segment-button>
@@ -28,25 +28,51 @@
 
   <!-- segment contents -->
   <div [ngSwitch]="calculator">
+  <!-- velocity -->
     <ion-list *ngSwitchCase="'velocity'">
       <ion-item>
         <ion-label color="primary" floating>diameter [mm]</ion-label>
-        <ion-input type="number" (change)="setDiameter($event)"></ion-input>
+        <ion-input type="number" (change)="setDiameter($event,'velocity')"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" floating>flow [m <sup>3</sup> /h]</ion-label>
-        <ion-input type="number" (change)="setFlow($event)"></ion-input>
+        <ion-input type="number" (change)="setFlow($event,'velocity')"></ion-input>
+      </ion-item>
+      <div padding text-center>
+        <p class="2rem">{{result}} m/s</p>
+      </div>
+    </ion-list>
+    
+    <!-- diameter -->
+    <ion-list *ngSwitchCase="'diameter'">
+      <ion-item>
+        <ion-label color="primary" floating>velocity [m/s]</ion-label>
+        <ion-input type="number" (change)="setVelocity($event,'diameter')"></ion-input>
       </ion-item>
       <ion-item>
-        {{result}}m/s
+        <ion-label color="primary" floating>flow [m <sup>3</sup> /h]</ion-label>
+        <ion-input type="number" (change)="setFlow($event,'diameter')"></ion-input>
       </ion-item>
+      <div padding text-center>
+        <p class="2rem">{{result}} mm</p>
+      </div>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'diameter'">
-      <ion-item>        
-        <h2>ARKEJ</h2>
+    <!-- flow -->
+    <ion-list *ngSwitchCase="'flow'">
+      <ion-item>
+        <ion-label color="primary" floating>velocity [m/s]</ion-label>
+        <ion-input type="number" (change)="setVelocity($event,'flow')"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>diameter [mm]</ion-label>
+        <ion-input type="number" (change)="setDiameter($event,'flow')"></ion-input>
+      </ion-item>
+      <div padding text-center>
+        <p class="2rem">{{result}} m <sup>3</sup> /h</p>
+      </div>
     </ion-list>
+
   </div>  
 
 </div>  
