@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { CalculatorsPage } from '../pages/calculators/calculators';
 import { FanChoicePage } from '../pages/fanChoice/fan-choice';
 
+import { MathJaxDirective } from '../directives/MathJax.directive'
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -15,7 +17,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     CalculatorsPage,
-    FanChoicePage
+    FanChoicePage,
+    MathJaxDirective
   ],
   imports: [
     BrowserModule,
