@@ -7,11 +7,18 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FanChoicePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	fanEfficiency: number = 0.65;
+	motorEfficiency: number = 0.95;
+	flow: number = 0;
+	pressureDrop: number = 0;
+	result: number = 0;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FanChoice');
-  }
+	FanPowerEquation: string ="`p=(\stackrel{.}{V}*\DeltaP_{a})/(\eta_{w}*\eta_{e})`";
 
+	 constructor(public navCtrl: NavController, public navParams: NavParams) {
+	 }
+
+	 calculate(event: any): void {
+	 	this.result = (this.flow * this.pressureDrop) / (this.fanEfficiency * this.motorEfficiency);
+	 }
 }

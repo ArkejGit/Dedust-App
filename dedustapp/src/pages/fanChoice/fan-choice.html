@@ -7,6 +7,23 @@
   </ion-navbar>
 </ion-header>
 
+<!-- content -->
 <ion-content padding>
-  <h3>Fan choice</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" floating>flow [m <sup>3</sup> /h]</ion-label>
+        <ion-input type="number" (change)="calculate($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>installation pressure drop [Pa]</ion-label>
+        <ion-input type="number" (change)="calculate($event)"></ion-input>
+      </ion-item>
+      <div padding text-center>
+        <p class="result">{{result}} W</p>
+      </div>
+    </ion-list>
+
+	<div [MathJax]="FanPowerEquation"></div>
+
+
 </ion-content>
