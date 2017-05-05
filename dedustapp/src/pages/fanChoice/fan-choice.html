@@ -11,19 +11,27 @@
 <ion-content padding>
     <ion-list>
       <ion-item>
-        <ion-label color="primary" floating>flow [m <sup>3</sup> /h]</ion-label>
-        <ion-input type="number" (change)="calculate($event)"></ion-input>
+        <ion-label color="primary" floating>flow [m <sup>3</sup> /s]</ion-label>
+        <ion-input type="number" [(ngModel)]="flow" (change)="calculate()"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" floating>installation pressure drop [Pa]</ion-label>
-        <ion-input type="number" (change)="calculate($event)"></ion-input>
+        <ion-input type="number" [(ngModel)]="pressureDrop" (change)="calculate()"></ion-input>
       </ion-item>
       <div padding text-center>
         <p class="result">{{result}} W</p>
       </div>
     </ion-list>
 
-	<div [MathJax]="FanPowerEquation"></div>
+    <div>
+    <p>The fan power is calculated using the following formula:</p>
+    <div class="equation" [MathJax]="FanPowerEquation"></div>
+    <p>V - total extract air flow rate [m<sup>3</sup>/s]</p>
+    <p>&Delta;p<sub>w</sub> - installation drop pressure</p>
+    <p>&eta;<sub>w</sub> - Overall efficiency of the fan (0,65)</p>
+    <p>&eta;<sub>e</sub> - Overall efficiency of the motor (0,95)</p>
+    </div>
+	
 
 
 </ion-content>

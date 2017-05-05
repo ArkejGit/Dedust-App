@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-fan-choice',
   templateUrl: 'fan-choice.html',
+  //styleUrls: [ 'fan-choice.scss' ]
 })
 export class FanChoicePage {
 
@@ -18,7 +20,7 @@ export class FanChoicePage {
 	 constructor(public navCtrl: NavController, public navParams: NavParams) {
 	 }
 
-	 calculate(event: any): void {
-	 	this.result = (this.flow * this.pressureDrop) / (this.fanEfficiency * this.motorEfficiency);
+	 calculate(): void {
+	 	this.result = Math.floor((this.flow * this.pressureDrop) / (this.fanEfficiency * this.motorEfficiency));
 	 }
 }
