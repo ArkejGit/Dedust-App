@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
@@ -11,8 +10,8 @@ export class FanChoicePage {
 
 	fanEfficiency: number = 0.65;
 	motorEfficiency: number = 0.95;
-	flow: number = 0;
-	pressureDrop: number = 0;
+	flow: number;
+	pressureDrop: number;
 	result: number = 0;
 
 	FanPowerEquation: string ="`p=(\stackrel{.}{V}*\DeltaP_{a})/(\eta_{w}*\eta_{e})`";

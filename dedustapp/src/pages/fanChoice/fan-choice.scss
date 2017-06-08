@@ -2,19 +2,21 @@ page-fan-choice {
 	.result {
 		font-size: 2rem;
 	}
-	.ng-valid * {
-		border-bottom-color: #dedede;
+	/* overwrite input ionic styling*/ 
+	.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+		border-bottom: 1px solid #dedede;
 		box-shadow: none;
 	}
+
 	.center {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	    display: block;
 	}
 	.equation > span {
-    display:block;
-   	width:100px;
-   	height: 100%;
-   	margin: 0 auto;
+	    display:block;
+	   	width:100px;
+	   	height: 100%;
+	   	margin: 0 auto;
 	}
 }
