@@ -19,7 +19,7 @@
         <ion-input type="number" [(ngModel)]="pressureDrop" (change)="calculate()"></ion-input>
       </ion-item>
       <div padding text-center>
-        <p class="result">{{result}} W</p>
+        <p class="result">{{result | powerInWatts}}</p>
       </div>
     </ion-list>
 

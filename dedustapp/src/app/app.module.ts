@@ -9,6 +9,8 @@ import { FanChoicePage } from '../pages/fanChoice/fan-choice';
 
 import { MathJaxDirective } from '../directives/MathJax.directive'
 
+import { PowerInWattsPipe } from '../pipes/power-in-watts.pipe'
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -18,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     CalculatorsPage,
     FanChoicePage,
-    MathJaxDirective
+    MathJaxDirective,
+    PowerInWattsPipe
   ],
   imports: [
     BrowserModule,
