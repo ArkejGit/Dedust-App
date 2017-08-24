@@ -20,6 +20,6 @@ export class FanChoicePage {
 	 }
 
 	 calculate(): void {
-	 	this.result = Math.floor((this.flow * this.pressureDrop) / (this.fanEfficiency * this.motorEfficiency));
+	 	this.result = (this.flow <= 0 || this.pressureDrop <= 0 || this.flow == undefined || this.pressureDrop == undefined) ? 0 : Math.floor((this.flow * this.pressureDrop) / (this.fanEfficiency * this.motorEfficiency));
 	 }
 }

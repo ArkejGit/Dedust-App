@@ -12,11 +12,11 @@
     <ion-list>
       <ion-item>
         <ion-label color="primary" floating>flow [m <sup>3</sup> /s]</ion-label>
-        <ion-input type="number" [(ngModel)]="flow" (change)="calculate()"></ion-input>
+        <ion-input type="number" min="0" [(ngModel)]="flow" (change)="calculate()"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" floating>installation pressure drop [Pa]</ion-label>
-        <ion-input type="number" [(ngModel)]="pressureDrop" (change)="calculate()"></ion-input>
+        <ion-input type="number" min="0" [(ngModel)]="pressureDrop" (change)="calculate()"></ion-input>
       </ion-item>
       <div padding text-center>
         <p class="result">{{result | powerInWatts}}</p>
